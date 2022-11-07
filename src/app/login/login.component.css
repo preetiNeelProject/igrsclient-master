@@ -1,0 +1,11 @@
+mat-form-field {
+    width: 75%;
+}
+
+mat-form-field mat-label {
+    font-size: 20px;
+}
+
+mat-form-field.mat-form-field-should-float mat-label {
+    font-size: 20px;
+}
