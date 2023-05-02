@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-lg-10 col-12 mt-2">
+            <mat-card>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="font-weight-bold">सम्पत्ति खोजें (क्रेता का नाम)</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-12 offset-lg-2">
+                        <mat-label class="font-weight-bold">तहसील/निबन्धन कार्यालय <span class="text-danger">*</span> :
+                        </mat-label>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-12">
+                        <mat-form-field appearance="outline">
+                            <mat-label>चयन करें</mat-label>
+                            <mat-select [required]="true">
+                                <mat-option *ngFor=" let subDistrict of subDistricts " [value]="subDistrict.value ">
+                                    {{subDistrict.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="row mt-2">
+                    <div class="col-lg-3 col-md-4 col-12 offset-lg-2">
+                        <mat-label class="font-weight-bold">क्रेता का नाम<span class="text-danger">*</span> :
+                        </mat-label>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-12">
+                        <mat-form-field appearance="outline">
+                            <mat-label>क्रेता का नाम</mat-label>
+                            <input matInput [required]="true">
+                            <mat-hint class="font-weight-bold text-danger">*एक से ज्यादा होने पर कोमा (,) से अलग करें</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-lg-3 col-md-4 col-12 offset-lg-2">
+                        <mat-label class="font-weight-bold">मोहल्ला/गाँव <span class="text-danger">*</span> :
+                        </mat-label>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-12">
+                        <mat-form-field appearance="outline">
+                            <mat-label>चयन करें</mat-label>
+                            <mat-select [required]="true">
+                                <mat-option *ngFor=" let village of villages " [value]="village.value ">
+                                    {{village.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row m-2">
+                    <div class="col-12 text-center">
+                        <button mat-raised-button color="primary">खोजें</button>
+                    </div>
+                </div>
+
+            </mat-card>
+        </div>
+        <div class="col-lg-2 col-12 mt-2 text-center">
+            <mat-card>
+                <h3 class="font-weight-bold"><i class="fa fa-info-circle"></i> जानकारी</h3>
+                <p></p>
+            </mat-card>
+        </div>
+    </div>
+</div>

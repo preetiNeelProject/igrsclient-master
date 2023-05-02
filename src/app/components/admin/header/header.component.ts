@@ -1,6 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,10 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   nowTime: string | null | undefined;
 
-  constructor() { 
+  constructor() {
     setInterval(() => {
       const pipe = new DatePipe('en-US');
-      this.nowTime=pipe.transform(new Date(), 'medium'); 
+      this.nowTime = pipe.transform(new Date(), 'medium');
     }, 1);
   }
 

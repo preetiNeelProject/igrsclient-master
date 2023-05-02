@@ -1,0 +1,79 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-lg-10 col-12 mt-2">
+            <mat-card>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="font-weight-bold">सम्पत्ति खोजें (पंजीकरण संख्या एवं पंजीकरण दिनांक/पंजीकरण वर्ष)</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-12 offset-lg-2">
+                        <mat-label class="font-weight-bold">कार्यालय का नाम <span class="text-danger">*</span> :
+                        </mat-label>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-12">
+                        <mat-form-field appearance="outline">
+                            <mat-label>चयन करें</mat-label>
+                            <mat-select [required]="true">
+                                <mat-option *ngFor=" let subDistrict of subDistricts " [value]="subDistrict.value ">
+                                    {{subDistrict.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="row mt-2">
+                    <div class="col-lg-3 col-md-4 col-12 offset-lg-2">
+                        <mat-label class="font-weight-bold">पंजीकरण संख्या <span class="text-danger">*</span> :
+                        </mat-label>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-12">
+                        <mat-form-field appearance="outline">
+                            <mat-label>पंजीकरण संख्या:</mat-label>
+                            <input matInput [required]="true">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-12 offset-lg-2">
+                        <mat-radio-group [(ngModel)]="queryParam" [required]="true">
+                            <mat-radio-button value="date">पंजीकरण दिनांक</mat-radio-button><br>
+                            <mat-radio-button value="year">पंजीकरण वर्ष</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-lg-3 col-md-4 col-12 offset-lg-2">
+                        <mat-label class="font-weight-bold"> {{queryParam=='date'?'पंजीकरण दिनांक':'पंजीकरण वर्ष'}} <span class="text-danger">*</span> :
+                        </mat-label>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-12">
+                        <mat-form-field appearance="outline">
+                            <mat-label> {{queryParam=='date'?'पंजीकरण दिनांक':'पंजीकरण वर्ष'}}</mat-label>
+                            <input matInput [type]="queryParam=='date'?'date':'number'" [required]="true">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row m-2">
+                    <div class="col-12 text-center">
+                        <button mat-raised-button color="primary">खोजें</button>
+                    </div>
+                </div>
+
+            </mat-card>
+        </div>
+        <div class="col-lg-2 col-12 mt-2 text-center">
+            <mat-card>
+                <h3 class="font-weight-bold"><i class="fa fa-info-circle"></i> जानकारी</h3>
+                <p></p>
+            </mat-card>
+        </div>
+    </div>
+</div>

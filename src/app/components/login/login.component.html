@@ -27,15 +27,15 @@
         </div>
         <div class="row">
             <div class="col-12 text-center">
-                <button type="submit" mat-raised-button class="rounded-pill" color="primary">प्रवेश करें</button>
+                <button type="submit" routerLink="/web/user/dashboard" mat-raised-button class="rounded-pill" color="primary">प्रवेश करें</button>
             </div>
         </div>
         <div class="row mt-2">
             <div class="col-6 text-center">
-                <span>पासवर्ड भूल गए ?<a href="#" class="link-primary font-weight-bold"> नया बनाए</a></span>
+                <span>पासवर्ड भूल गए ?<a href="#" routerLink="/user/forgotPassword" class="link-primary font-weight-bold"> नया बनाए</a></span>
             </div>
             <div class="col-6 text-center">
-                <span>नवीन उपयोगकर्ता ?<a [routerLink]="['/register']" class="link-primary font-weight-bold"> रजिस्टर करें</a></span>
+                <span>नवीन उपयोगकर्ता ?<a [routerLink]="['web/user/register']" class="link-primary font-weight-bold"> रजिस्टर करें</a></span>
             </div>
         </div>
     </form>
